@@ -1,14 +1,13 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}} by {{author}}
-  </h1>
-  <button (click)="count = count + 1">Click me</button>
-  <input [(ngModel)]="childTitle" [disabled]="ban" type="text">
-  <button (click)="disable()">Disable input</button>
-  <h2>{{count}}</h2>
-  <img [src]="imgSource">
-  <app-my-component [title]='childTitle'></app-my-component>
-</div>
+<body>
+  <div style="text-align:center">
+    <h1 class="title">
+      List projects
+    </h1>
+  </div>
 
-
+  <div *ngFor="let item of items | async">
+    <app-project [project]='item' (change)="changeLike($event)"></app-project>
+  </div>
+  <button md-button (click)="openDialog()" class="button_add">Add project</button>
+</body>
+<h1>{{result}}</h1>
