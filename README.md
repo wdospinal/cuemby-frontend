@@ -1,9 +1,11 @@
-# Angular simple example
-First Angular example for Angular Medellin Meetup
+# Personal Projects platform
+AngularMaterial and Angular example with Firebase
 
 ## Tools used along this project
 * [Angular CLI](https://github.com/angular/angular-cli).
 * [Angular](https://angular.io/).
+* [AngularMaterial](https://material.angular.io/).
+* [AngularFire](https://github.com/firebase/angularfire).
 
 ## Running the project
 1. Install the project dependencies ```npm install```
