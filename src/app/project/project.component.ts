@@ -18,7 +18,6 @@ export class ProjectComponent implements OnInit {
   ngOnInit() {
   }
   doLike() {
-    console.log(this.project);
     this.change.emit(this.project);
   }
 

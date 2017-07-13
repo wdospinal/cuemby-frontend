@@ -17,7 +17,6 @@ export class AppComponent {
   items: FirebaseListObservable<any[]>;
   public result: any;
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, private dialogsService: DialogsService) {
-    console.log(db);
     this.items = db.list('/messages', {
       query: {
         limitToLast: 50
@@ -26,21 +25,20 @@ export class AppComponent {
   }
 
   changeLike(event) {
-    console.log(event);
     const likes = event.likes + 1;
     this.items.update(event.$key, { likes: likes });
   }
 
   updateList(project: Project) {
-    console.log(project);
     this.items.push(project);
   }
 
   public openDialog() {
     this.dialogsService
-      .addProject(this.items)
+      .addProject()
       .subscribe(res => {
         console.log(res);
+        this.items.push(res);
       });
   }
 }

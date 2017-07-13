@@ -11,13 +11,11 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class AddProjectComponent {
 
   public project: Project = { name: 'Default', url: 'default.com', likes: 0 };
-  items: FirebaseListObservable<any[]>;
 
   constructor(public dialogRef: MdDialogRef<AddProjectComponent>) {
 
   }
   addElement() {
-    console.log(this.project);
-    this.items.push(this.project);
+    this.dialogRef.close(this.project);
   }
 }

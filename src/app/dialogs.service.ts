@@ -10,11 +10,10 @@ export class DialogsService {
 
   constructor(private dialog: MdDialog) { }
 
-  public addProject(items: FirebaseListObservable<any[]>): Observable<Project> {
+  public addProject(): Observable<Project> {
 
     let dialogRef: MdDialogRef<AddProjectComponent>;
     dialogRef = this.dialog.open(AddProjectComponent);
-    dialogRef.componentInstance.items = items;
 
     return dialogRef.afterClosed();
   }
