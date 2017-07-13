@@ -18,3 +18,7 @@
 .title {
   font-weight: bold;
 }
+.example-header-image {
+  background-image: url('https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/2050/SITours/paris-in-one-day-sightseeing-tour-in-paris-130592.jpg');
+  background-size: cover;
+}
