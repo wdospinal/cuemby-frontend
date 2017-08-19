@@ -1,0 +1,14 @@
+<h2 md-dialog-title>{{show.name}}</h2>
+<md-dialog-content>{{show.language}} - {{show.sumary}}</md-dialog-content>
+<ul>
+  <li *ngFor="let genre of show.genres">
+    {{ genre }}
+  </li>
+  <ul>
+    <h3>{{show.schedule}}</h3>
+    <h3>{{show.rating}}</h3>
+    <md-dialog-actions>
+      <button md-button md-dialog-close>No</button>
+      <!-- Can optionally provide a result for the closing dialog. -->
+      <button md-button [md-dialog-close]="true">Yes</button>
+    </md-dialog-actions>

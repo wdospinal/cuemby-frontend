@@ -34,7 +34,7 @@ export class AppComponent {
 
   public openDialog() {
     this.dialogsService
-      .openShow()
+      .openShow(this.items[0])
       .subscribe(res => {
         console.log(res);
         this.items.push(res);

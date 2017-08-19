@@ -1,6 +1,8 @@
 export class Show {
     name: string;
-    url: string;
-    likes: number;
-    content: string;
+    language: string;
+    sumary: string;
+    rating: string;
+    genres: Array<string>;
+    schedule: { days: [string], time: string };
 }

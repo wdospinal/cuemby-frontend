@@ -43,6 +43,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { ShowComponent } from './show/show.component';
 import { DialogsService } from './dialogs.service';
+import { ShowDetailComponent } from './show-detail/show-detail.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDn0-Y7XUdc5p9lO-q8Ki0K0UPRiJO0hh8',
@@ -54,12 +55,19 @@ export const firebaseConfig = {
 };
 
 @NgModule({
+  exports: [
+    ShowDetailComponent,
+  ],
+  entryComponents: [
+    ShowDetailComponent,
+],
   providers: [
     DialogsService,
   ],
   declarations: [
     AppComponent,
-    ShowComponent
+    ShowComponent,
+    ShowDetailComponent
   ],
   imports: [
     BrowserModule,
