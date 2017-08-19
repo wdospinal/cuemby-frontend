@@ -8,6 +8,4 @@
   <div *ngFor="let item of items | async">
     <app-show [show]='item' (change)="changeLike($event)"></app-show>
   </div>
-  <button md-button (click)="openDialog()" class="button_add">Add show</button>
 </body>
-<h1>{{result}}</h1>

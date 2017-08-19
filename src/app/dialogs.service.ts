@@ -13,7 +13,7 @@ export class DialogsService {
   public openShow(show: Show): Observable<Show> {
     let dialogRef: MdDialogRef<ShowDetailComponent>;
     dialogRef = this.dialog.open(ShowDetailComponent);
-
+    console.log(show);
     dialogRef.componentInstance.show = show;
     return dialogRef.afterClosed();
   }

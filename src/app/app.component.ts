@@ -4,7 +4,6 @@ import { ShowComponent } from './show/show.component';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Show } from './model/show';
-import { DialogsService } from './dialogs.service';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +13,7 @@ import { DialogsService } from './dialogs.service';
 export class AppComponent {
 
   items: FirebaseListObservable<any[]>;
-  public result: any;
-  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, private dialogsService: DialogsService) {
+  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
     this.items = db.list('/shows', {
       query: {
         limitToLast: 50
@@ -30,14 +28,5 @@ export class AppComponent {
 
   updateList(show: Show) {
     this.items.push(show);
-  }
-
-  public openDialog() {
-    this.dialogsService
-      .openShow(this.items[0])
-      .subscribe(res => {
-        console.log(res);
-        this.items.push(res);
-      });
   }
 }

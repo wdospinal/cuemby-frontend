@@ -3,7 +3,7 @@
     <md-card-title class="title">{{show.name}} ({{show.likes}})</md-card-title>
     <md-card-subtitle>{{show.rating.average}}</md-card-subtitle>
   </md-card-header>
-  <img md-card-image src="{{show.image.medium}}">
+  <img md-card-image (click)="openDialog()" src="{{show.image.medium}}">
   <md-card-content>
     <p>
       {{show.content}}
