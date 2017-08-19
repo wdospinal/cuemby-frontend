@@ -9,4 +9,5 @@ AngularMaterial and Angular example with Firebase
 
 ## Running the project
 1. Install the project dependencies ```npm install```
-2. Run the app ```ng serve -o``` Navigate to `http://localhost:4200/`.
+2. Install angular cli ```npm install -g @angular/cli```
+3. Run the app ```ng serve -o``` Navigate to `http://localhost:4200/`.
