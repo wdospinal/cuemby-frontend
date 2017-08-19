@@ -1,4 +1,4 @@
-export class Project {
+export class Show {
     name: string;
     url: string;
     likes: number;

@@ -41,33 +41,25 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
-import { ProjectComponent } from './project/project.component';
-import { AddProjectComponent } from './add-project/add-project.component';
+import { ShowComponent } from './show/show.component';
 import { DialogsService } from './dialogs.service';
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyCT_JcNuLP0N947hKlbI56lVznRKggxxkI',
-  authDomain: 'personalprojectsshared.firebaseapp.com',
-  databaseURL: 'https://personalprojectsshared.firebaseio.com',
-  projectId: 'personalprojectsshared',
-  storageBucket: 'personalprojectsshared.appspot.com',
-  messagingSenderId: '31449931878'
+  apiKey: 'AIzaSyDn0-Y7XUdc5p9lO-q8Ki0K0UPRiJO0hh8',
+  authDomain: 'letflix-67e8f.firebaseapp.com',
+  databaseURL: 'https://letflix-67e8f.firebaseio.com',
+  showId: 'letflix-67e8f',
+  storageBucket: 'letflix-67e8f.appspot.com',
+  messagingSenderId: '223381635725'
 };
 
 @NgModule({
-  exports: [
-    AddProjectComponent,
-  ],
   providers: [
     DialogsService,
   ],
-  entryComponents: [
-    AddProjectComponent,
-  ],
   declarations: [
     AppComponent,
-    ProjectComponent,
-    AddProjectComponent
+    ShowComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,12 @@
-<md-card class="project-card">
+<md-card class="show-card">
   <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
-    <md-card-title class="title">{{project.name}} ({{project.likes}})</md-card-title>
-    <md-card-subtitle>{{project.url}}</md-card-subtitle>
+    <md-card-title class="title">{{show.name}} ({{show.likes}})</md-card-title>
+    <md-card-subtitle>{{show.rating.average}}</md-card-subtitle>
   </md-card-header>
+  <img md-card-image src="{{show.image.medium}}">
   <md-card-content>
     <p>
-      {{project.content}}
+      {{show.content}}
     </p>
   </md-card-content>
   <md-card-actions>

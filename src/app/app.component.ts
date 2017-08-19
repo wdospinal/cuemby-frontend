@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
-import { ProjectComponent } from './project/project.component';
-import { AddProjectComponent } from './add-project/add-project.component';
+import { ShowComponent } from './show/show.component';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Project } from './model/project';
+import { Show } from './model/show';
 import { DialogsService } from './dialogs.service';
 
 @Component({
@@ -17,7 +16,7 @@ export class AppComponent {
   items: FirebaseListObservable<any[]>;
   public result: any;
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, private dialogsService: DialogsService) {
-    this.items = db.list('/messages', {
+    this.items = db.list('/shows', {
       query: {
         limitToLast: 50
       }
@@ -29,13 +28,13 @@ export class AppComponent {
     this.items.update(event.$key, { likes: likes });
   }
 
-  updateList(project: Project) {
-    this.items.push(project);
+  updateList(show: Show) {
+    this.items.push(show);
   }
 
   public openDialog() {
     this.dialogsService
-      .addProject()
+      .openShow()
       .subscribe(res => {
         console.log(res);
         this.items.push(res);
