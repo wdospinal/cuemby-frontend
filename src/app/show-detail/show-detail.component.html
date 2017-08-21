@@ -12,8 +12,19 @@
   </li>
 </ul>
 <h3>{{show.rating.average}}</h3>
+<h3>Comments</h3>
+<ul>
+  <li *ngFor="let comment of comments | async">
+    <b>{{ comment.author }}</b> : {{ comment.comment }} 
+  </li>
+</ul>
+
+<form class="comment-form">
+  <md-input-container class="comment-full-width">
+    <input mdInput type="text" name="comment" [(ngModel)]="model.comment" #comment="ngModel" maxlength="256" placeholder="Comment" required />
+  </md-input-container>
+</form>
 <md-dialog-actions>
-  <button md-button md-dialog-close>No</button>
-  <!-- Can optionally provide a result for the closing dialog. -->
-  <button md-button [md-dialog-close]="true">Yes</button>
+  <button md-button (click)="addComment()">Send</button>
+  <button md-button [md-dialog-close]="true">CLose</button>
 </md-dialog-actions>

@@ -22,13 +22,4 @@ export class HomeComponent {
       }
     });
   }
-
-  changeLike(event) {
-    const likes = event.likes + 1;
-    this.shows.update(event.$key, { likes: likes });
-  }
-
-  updateList(show: Show) {
-    this.shows.push(show);
-  }
 }

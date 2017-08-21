@@ -21,7 +21,6 @@ export class ShowComponent implements OnInit {
   }
 
   addFavorite() {
-    console.log('send favorite')
     this.showsService.addFavorite(this.show)
     .subscribe(data => {
       console.log('send');
