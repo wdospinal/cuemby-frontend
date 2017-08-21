@@ -13,6 +13,7 @@ import { Show } from 'app/model/show';
 export class HomeComponent {
   currentUser: User;
   shows: FirebaseListObservable<any[]>;
+  showSearch= false;
 
   constructor(private userService: UserService, public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
