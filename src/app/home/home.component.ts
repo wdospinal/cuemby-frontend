@@ -12,7 +12,9 @@ import { Show } from 'app/model/show';
 })
 export class HomeComponent {
   currentUser: User;
+  search: string;
   shows: FirebaseListObservable<any[]>;
+  favorites: FirebaseListObservable<any[]>;
   showSearch= false;
 
   constructor(private userService: UserService, public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
@@ -22,5 +24,6 @@ export class HomeComponent {
         limitToLast: 50
       }
     });
+    this.favorites = db.list('/favorites/');
   }
 }

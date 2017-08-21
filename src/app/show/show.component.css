@@ -1,7 +1,8 @@
 .show-card {
   font-family: Calibri, Trebuchet, sans-serif;
   background: #ED9B40;
-  margin: 10px;
+  margin: 20px;
+  width: 400px;
 }
 .like {
   background-color: #ED9B40;
