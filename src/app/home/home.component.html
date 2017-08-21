@@ -1,0 +1,4 @@
+<p><a [routerLink]="['/login']">Logout</a></p>
+<div *ngFor="let show of shows | async">
+  <app-show [show]='show' (change)="changeLike($event)"></app-show>
+</div>
