@@ -1,4 +1,5 @@
 export class Show {
+    id: string;
     name: string;
     language: string;
     sumary: string;

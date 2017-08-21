@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Show } from '../model/show';
 import { DialogsService } from '../dialogs.service';
+import { ShowsService } from 'app/shows.service';
 
 @Component({
   selector: 'app-show',
@@ -14,9 +15,19 @@ export class ShowComponent implements OnInit {
   @Output()
   change: EventEmitter<Show> = new EventEmitter<Show>();
 
-  constructor(private dialogsService: DialogsService) { }
+  constructor(private dialogsService: DialogsService, private showsService: ShowsService) { }
 
   ngOnInit() {
+  }
+
+  addFavorite() {
+    console.log('send favorite')
+    this.showsService.addFavorite(this.show)
+    .subscribe(data => {
+      console.log('send');
+    }, error => {
+      console.log(error);
+    });
   }
 
   doLike() {
@@ -24,7 +35,6 @@ export class ShowComponent implements OnInit {
   }
 
   public openDialog() {
-    console.log(this.show);
     this.dialogsService
       .openShow(this.show)
       .subscribe(res => {

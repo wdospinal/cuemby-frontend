@@ -53,6 +53,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from 'app/guards/auth.guard';
 import { UserService } from 'app/user.service';
 import { AuthenticationService } from 'app/authentication.service';
+import { ShowsService } from 'app/shows.service';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDn0-Y7XUdc5p9lO-q8Ki0K0UPRiJO0hh8',
@@ -75,6 +76,7 @@ export const firebaseConfig = {
     customHttpProvider,
     AuthGuard,
     AuthenticationService,
+    ShowsService,
     UserService
   ],
   declarations: [
