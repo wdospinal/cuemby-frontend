@@ -29,8 +29,13 @@ export class ShowComponent implements OnInit {
     });
   }
 
-  doLike() {
-    this.change.emit(this.show);
+  addLike() {
+    this.showsService.addLike(this.show)
+    .subscribe(data => {
+      console.log('send');
+    }, error => {
+      console.log(error);
+    });
   }
 
   public openDialog() {
