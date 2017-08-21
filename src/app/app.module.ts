@@ -44,6 +44,7 @@ import { AppComponent } from './app.component';
 import { ShowComponent } from './show/show.component';
 import { DialogsService } from './dialogs.service';
 import { ShowDetailComponent } from './show-detail/show-detail.component';
+import { LoginComponent } from './login/login.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDn0-Y7XUdc5p9lO-q8Ki0K0UPRiJO0hh8',
@@ -67,7 +68,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     ShowComponent,
-    ShowDetailComponent
+    ShowDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
