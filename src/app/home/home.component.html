@@ -13,7 +13,7 @@
     </md-sidenav>
   </md-sidenav-container>
   <div layout="column" class="relative" layout-fill role="main">
-    <md-toolbar[hidden]="!showSearch">
+    <md-toolbar [hidden]="!showSearch">
       <div class="md-toolbar-tools">
         <h3>
           Dashboard
@@ -41,7 +41,7 @@
         <h3 flex="10">
           Back
         </h3>
-        <md-input-containerflex>
+        <md-input-container flex>
           <label>&nbsp;</label>
           <input mdInput [(ngModel)]="search.who" placeholder="enter search">
         </md-input-container>
