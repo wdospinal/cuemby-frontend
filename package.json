@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start": "node server.js",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "npm i webpack -g && npm link webpack --save-dev && ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
