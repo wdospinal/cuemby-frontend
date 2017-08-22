@@ -24,6 +24,8 @@ export class HomeComponent {
         limitToLast: 50
       }
     });
-    this.favorites = db.list('/favorites/');
+    const email = this.currentUser.email.replace(/[.]/g, '-');
+    this.favorites = db.list(`/favorites/${email}`);
+    console.log(this.favorites);
   }
 }
